@@ -1,5 +1,4 @@
- npm i nodemon multer mongoose jsonwebtoken express-formidable express-async-h
-andler express dotenv cors cookie-parser concurrently bcryptjs
+ npm i nodemon multer mongoose jsonwebtoken express-formidable express-async-handler express dotenv cors cookie-parser concurrently bcryptjs
 
  npm i slick-carousel react-slick react-toastify react-router react-router-dom react-redux react-icons apexcharts react-apexcharts moment flowbite axios @paypal/react-paypal-js @reduxjs/toolkit
 
@@ -42,3 +41,55 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => console.log(`server running on the port: ${port}`));
+
+
+//tailwind
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+---------basics---------
+
+// Callback
+
+const f1 = (val, cal) => {
+  return cal(val + 10);
+};
+
+const cal = (val) => {
+  return val + 20;
+};
+
+console.log(f1(1, cal));
+
+
+//Promise
+
+const p1 = (val) =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(val + 10);
+    }, 1000);
+  });
+
+p1(1)
+  .then((x) => x + 20)
+  .then(console.log);
+  
